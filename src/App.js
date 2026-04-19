@@ -73,7 +73,7 @@ function App() {
       
       <main className="main-content">
         <header className="header">
-          <h1>SongFinder<span className="accent">2</span></h1>
+          <h1>SongFinder</h1>
           <p>Найдите идеальную музыку под ваше настроение</p>
         </header>
 
@@ -124,9 +124,11 @@ function App() {
               />
             </div>
 
-            <button type="submit" className="search-button" disabled={loading}>
-              {loading ? 'Ищем магию...' : 'Найти музыку'}
-            </button>
+            <div className="button-container">
+              <button type="submit" className="search-button" disabled={loading}>
+                {loading ? 'Ищем магию...' : 'Найти музыку'}
+              </button>
+            </div>
           </form>
           {error && <div className="error-message">{error}</div>}
         </section>

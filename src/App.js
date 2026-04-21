@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 
 const MOODS = [
-  'весёлое', 'грустное', 'энергичное', 'спокойное', 
-  'меланхоличное', 'танцевальное', 'агрессивное', 'романтичное', 'фоновое'
+  'lõbus', 'kurb', 'energiline', 'rahulik', 
+  'melanhoolne', 'tantsuline', 'agressiivne', 'romantiline', 'taustamuusika'
 ];
 
 const GENRES = [
@@ -12,14 +12,14 @@ const GENRES = [
 ];
 
 const YEARS = [
-  { label: 'Любое время', value: '' },
-  { label: 'Новинки (с 2020)', value: '2020-2026' },
+  { label: 'Mis tahes aeg', value: '' },
+  { label: 'Uued (alates 2020)', value: '2020-2026' },
   { label: '2010 – 2020', value: '2010-2020' },
   { label: '2000 – 2010', value: '2000-2010' },
-  { label: '90-е годы', value: '1990-1999' },
-  { label: '80-е годы', value: '1980-1989' },
-  { label: '70-е годы', value: '1970-1979' },
-  { label: 'До 70-х', value: '1900-1969' }
+  { label: '90-ndad', value: '1990-1999' },
+  { label: '80-ndad', value: '1980-1989' },
+  { label: '70-ndad', value: '1970-1979' },
+  { label: 'Enne 70-ndaid', value: '1900-1969' }
 ];
 
 function App() {
@@ -74,13 +74,13 @@ function App() {
       <main className="main-content">
         <header className="header">
           <h1>SongFinder</h1>
-          <p>Найдите идеальную музыку под ваше настроение</p>
+          <p>Leia ideaalne muusika oma meeleolu jaoks</p>
         </header>
 
         <section className="search-section glass-panel">
           <form onSubmit={handleSearch} className="search-form">
             <div className="form-group">
-              <label htmlFor="mood">Настроение</label>
+              <label htmlFor="mood">Meeleolu</label>
               <select 
                 id="mood" 
                 value={mood} 
@@ -91,7 +91,7 @@ function App() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="genre">Жанр</label>
+              <label htmlFor="genre">Žanr</label>
               <select 
                 id="genre" 
                 value={genre} 
@@ -102,7 +102,7 @@ function App() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="year">Год</label>
+              <label htmlFor="year">Aasta</label>
               <select 
                 id="year" 
                 value={year} 
@@ -113,7 +113,7 @@ function App() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="count">Количество (до 100)</label>
+              <label htmlFor="count">Kogus (kuni 100)</label>
               <input 
                 type="number" 
                 id="count" 
@@ -126,7 +126,7 @@ function App() {
 
             <div className="button-container">
               <button type="submit" className="search-button" disabled={loading}>
-                {loading ? 'Ищем магию...' : 'Найти музыку'}
+                {loading ? 'Otsime maagiat...' : 'Otsi muusikat'}
               </button>
             </div>
           </form>
@@ -135,7 +135,7 @@ function App() {
 
         <section className="results-section">
           {tracks.length > 0 && (
-            <h2 className="results-title">Мы подобрали для вас {tracks.length} треков:</h2>
+            <h2 className="results-title">Oleme teile valinud {tracks.length} lugu:</h2>
           )}
           
           <div className="tracks-grid">
@@ -158,7 +158,7 @@ function App() {
                   rel="noreferrer" 
                   className="spotify-link"
                 >
-                  Слушать в Spotify
+                  Kuula Spotifys
                 </a>
               </div>
             ))}
